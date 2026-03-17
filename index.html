@@ -1005,18 +1005,7 @@ let music=document.getElementById("musica");
 music.play().catch(()=>{});
 }
 
-const params = new URLSearchParams(window.location.search);
-const invitado = params.get("invitado");
 
-if(invitado){
-  // Al final de la invitación
-  document.getElementById("agradecimiento").innerHTML =
-  "Tu presencia hará este día aún más especial <b>" + invitado + "</b>";
-
-  // En la pantalla de intro
-  document.getElementById("nombre-invitado").innerHTML =
-  "¡Bienvenido, <b>" + invitado + "</b>!";
-}
 
 const canvas = document.getElementById("polvo");
 const ctx = canvas.getContext("2d");
