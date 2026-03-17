@@ -593,7 +593,7 @@ box-shadow:
 </div>
 
 <audio id="musica" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2d6d5e7b3e.mp3">
+  <source src="musica.mp3" type="audio/mpeg">
 </audio>
 <button class="music-btn" onclick="toggleMusic()">🎵</button>
 
@@ -987,11 +987,13 @@ mostrarPregunta();
 
 
 function abrirInvitacion(){
-document.getElementById("intro").style.display="none";
-document.querySelector(".music-btn").style.display="block";
+  document.getElementById("intro").style.display="none";
+  document.querySelector(".music-btn").style.display="block";
 
-let music=document.getElementById("musica");
-music.play().catch(()=>{});
+  let music = document.getElementById("musica");
+  music.play().catch(()=>{
+    console.log("El navegador requiere interacción del usuario para reproducir audio.");
+  });
 }
 
 const params = new URLSearchParams(window.location.search);
