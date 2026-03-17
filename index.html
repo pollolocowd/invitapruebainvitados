@@ -1063,6 +1063,19 @@ requestAnimationFrame(animarPolvo);
 }
 
 animarPolvo();
+
+const params = new URLSearchParams(window.location.search);
+const invitado = params.get("invitado");
+
+if (invitado) {
+  // Intro
+  document.getElementById("nombre-invitado").innerHTML =
+    "¡Bienvenido, <b>" + invitado + "</b>!";
+
+  // Agradecimiento al final
+  document.getElementById("agradecimiento").innerHTML =
+    "Tu presencia hará este día aún más especial <b>" + invitado + "</b>";
+}
 </script>
 </body>
 </html>
