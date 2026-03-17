@@ -599,6 +599,67 @@ box-shadow:
   border-color: var(--color3);
   box-shadow:0 0 15px rgba(var(--color3-rgba),0.8);
 }
+.sobre-card {
+  position: relative;
+  padding-top: 140px; /* más espacio arriba para el sobre flotante */
+  padding-bottom: 40px; /* más espacio abajo */
+  max-width: 700px;     /* más ancho del card */
+  margin: 40px auto;    /* centrado y margen vertical */
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 18px;      /* texto más grande */
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 25px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5),
+              0 0 25px rgba(var(--color1-rgba),0.2);
+}
+
+.sobre-flotante {
+  position: absolute;
+  top: -50px;          /* un poco más arriba */
+  left: 62%;           /* centrado horizontal */
+  transform: translateX(-50%);
+  width: 105px;        /* sobre más grande */
+  z-index: 10;
+}
+
+.sobre-flotante img {
+  width: 150%;         /* ajusta tamaño interno */
+  display: block;
+  animation: flotar 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes flotar {
+  0% { transform: translateX(-50%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* Estilo base de los íconos con zoom y brillo automático */
+.dress-item i {
+  font-size: 45px;
+  color: var(--color1);
+  margin-bottom: 10px;
+
+  /* transición suave para hover */
+  transition: transform 0.3s ease, color 0.3s ease;
+
+  /* animación de latido */
+  animation: latido 1.5s infinite;
+}
+
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* Zoom al pasar el mouse */
+.dress-item i:hover {
+  transform: scale(1.5);
+  color: var(--color3);
+}
+
 </style>
 </head>
 <body>
@@ -758,17 +819,21 @@ Evitar jeans y tenis
 </div>
 
   <!-- SOBRE DE REGALOS -->
-  <div class="section">
-    <h2>🎁 Sobre de Regalos</h2>
-    <p>Tu presencia es el mejor regalo, pero si deseas obsequiar algo más puedes hacerlo mediante transferencia.</p>
-    <button class="accordion">Ver datos bancarios</button>
-    <div class="panel">
-      <p><strong>Banco:</strong> BBVA Bancomer</p>
-      <p><strong>Beneficiario:</strong> Valeria González Martínez</p>
-      <p><strong>Número de cuenta:</strong> 012345678901234567</p>
-      <p><strong>CLABE:</strong> 012345678901234567</p>
-    </div>
+  <div class="section sobre-card">
+  <div class="sobre-flotante">
+    <img src="https://i.postimg.cc/WbS61Kms/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260317-125300-0000.png" alt="Sobre guinda">
   </div>
+  
+  <h2> Sobre de Regalos</h2>
+  <p>Tu presencia es el mejor regalo, pero si deseas obsequiar algo más puedes hacerlo mediante transferencia.</p>
+  <button class="accordion">Ver datos bancarios</button>
+  <div class="panel">
+    <p><strong>Banco:</strong> BBVA Bancomer</p>
+    <p><strong>Beneficiario:</strong> Valeria González Martínez</p>
+    <p><strong>Número de cuenta:</strong> 012345678901234567</p>
+    <p><strong>CLABE:</strong> 012345678901234567</p>
+  </div>
+</div>
 
 <!-- CONFIRMACION -->
 <div class="section">
