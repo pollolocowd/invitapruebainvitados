@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mis XV Años - María</title>
+<title>Mis XV Años - Fabiola</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -29,7 +29,7 @@ body{
   text-align:center;
   background:
   linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
-  url("https://i.postimg.cc/CxvXnH3R/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260313-180036-0000.png");
+  url("https://i.postimg.cc/3wsF6214/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-210306-0000.png");
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
@@ -290,12 +290,6 @@ animation:shine 5s linear infinite;
 100%{background-position:200%;}
 }
 
-.btn{
-background:linear-gradient(45deg,var(--color2),var(--color1));
-border:none;
-box-shadow:0 10px 30px rgba(var(--color1-rgba),.5);
-}
-
 .slider{
 display:flex;
 overflow-x:auto;
@@ -366,27 +360,33 @@ flex-direction:column;
 align-items:center;
 }
 
-.flip{
-background:linear-gradient(45deg,var(--color2),var(--color1));
-width:70px;
-height:70px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:34px;
-font-weight:bold;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(var(--color1-rgba),.5);
-animation:flipAnim .7s;
-}
-.flip-box p{
-margin-top:8px;
-font-size:14px;
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-@keyframes flipAnim{
-0%{transform:rotateX(90deg);opacity:0;}
-100%{transform:rotateX(0deg);opacity:1;}
+.flip-box {
+  background: rgba(0,0,0,0.3); /* fondo semi-transparente */
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.flip-box span {
+  font-size: 60px;  /* número grande */
+  font-weight: bold;
+  color: #ffd700;   /* dorado */
+  display: block;
+}
+
+.flip-box p {
+  font-size: 18px;  /* etiquetas: Días, Horas, Min, Seg */
+  color: white;
+  margin-top: 5px;
 }
 
 #confirmacionForm{
@@ -581,12 +581,14 @@ box-shadow:
 0 0 20px rgba(var(--color1-rgba),.4);
 }
 }
+
+
 </style>
 </head>
 <body>
 <div id="intro">
   <div class="intro-content">
-    <h1>María</h1>
+    <h1>Fabiola</h1>
     <p>Mis XV Años</p>
     <button onclick="abrirInvitacion()">Abrir Invitación</button>
   </div>
@@ -601,12 +603,12 @@ box-shadow:
 
   <!-- PORTADA -->
 <div class="section">
-  <h1>María</h1>
+  <h1>Fabiola</h1>
   <p>Mis XV Años</p>
   <p>15 de Agosto 2026</p>
 
   <div class="foto-magica">
-    <img src="https://i.postimg.cc/0jLhj8F3/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260313-181100-0000.png">
+    <img src="https://i.postimg.cc/BQjt8Rsh/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-210824-0000.png">
     <canvas id="polvo"></canvas>
   </div>
 
@@ -668,7 +670,7 @@ box-shadow:
 <p>Parroquia San Miguel</p>
 <p>4:00 PM</p>
 
-<img src="https://i.postimg.cc/br31FyXn/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260315-124651-0000.png">
+<img src="https://i.postimg.cc/Y9rkgDGV/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-222847-0000.png">
 
 <a class="btn" href="https://maps.google.com" target="_blank">
 Ver ubicación
@@ -681,7 +683,7 @@ Ver ubicación
     <h2>Recepción</h2>
     <p>Salón Jardín Real</p>
     <p>7:00 PM</p>
-    <img src="https://i.postimg.cc/13Lwd7Th/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260315-124728-0000.png">
+    <img src="https://i.postimg.cc/y6rBgP1H/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-222956-0000.png">
     <a class="btn" href="https://maps.google.com" target="_blank">Cómo llegar</a>
   </div>
 
@@ -727,9 +729,9 @@ Evitar jeans y tenis
 <h2>Galería</h2>
 
 <div class="slider">
-<img src="https://i.postimg.cc/mkx02L0X/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260313-184108-0000.png">
-<img src="https://i.postimg.cc/sXLNHjV8/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260313-181903-0000.webp">
-<img src="https://i.postimg.cc/bYb7Vnt4/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260313-184053-0000.png">
+<img src="https://i.postimg.cc/c1DLS362/56668-2.jpg">
+<img src="https://i.postimg.cc/6QwXR6yH/1773726183188-2.jpg">
+<img src="https://i.postimg.cc/VsTPgWJ5/1773725975209-2.jpg">
 </div>
 
 </div>
@@ -767,7 +769,7 @@ Evitar jeans y tenis
 </div>
 
  <div class="section" id="trivia">
-  <h2>Trivia sobre María 🎉</h2>
+  <h2>Trivia sobre Fabiola 🎉</h2>
   <div id="pregunta"></div>
   <div id="opciones"></div>
   <button id="siguiente" class="btn" style="display:none;">
@@ -826,15 +828,12 @@ actualizarFlip("segundos",segundos);
 
 },1000);
 
-function actualizarFlip(id,valor){
-const el=document.getElementById(id);
-
-if(el.innerText!=valor){
-el.style.animation="none";
-void el.offsetWidth;
-el.style.animation="flipAnim .7s";
-el.innerText=valor;
-}
+function actualizarFlip(id, valor){
+  const el = document.getElementById(id);
+  if(el.innerText != valor){
+    el.innerText = valor;
+    // eliminado el latido
+  }
 }
 
 // secciones y timeline animado
@@ -907,27 +906,27 @@ this.reset();
 
 const preguntas = [
   {
-    pregunta: "¿Cuál es el color favorito de María?",
+    pregunta: "¿Cuál es el color favorito de Fabiola?",
     opciones: ["Azul", "Rosa", "Plata", "Morado"],
     correcta: 2
   },
   {
-    pregunta: "¿Quién es el artista favorito de María?",
+    pregunta: "¿Quién es el artista favorito de Fabiola?",
     opciones: ["Bad Bunny", "Taylor Swift", "Shakira", "Ed Sheeran"],
     correcta: 1
   },
   {
-    pregunta: "¿Cuál es la serie favorita de María?",
+    pregunta: "¿Cuál es la serie favorita de Fabiola?",
     opciones: ["Stranger Things", "The Witcher", "Friends", "Gossip Girl"],
     correcta: 3
   },
   {
-    pregunta: "¿Cuál es el deporte que más le gusta a María?",
+    pregunta: "¿Cuál es el deporte que más le gusta a Fabiola?",
     opciones: ["Fútbol", "Natación", "Tenis", "Básquetbol"],
     correcta: 1
   },
   {
-    pregunta: "¿Cuál es la comida favorita de María?",
+    pregunta: "¿Cuál es la comida favorita de Fabiola?",
     opciones: ["Pizza", "Sushi", "Tacos", "Pasta"],
     correcta: 3
   }
