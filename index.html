@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mis XV Años - Fabiola</title>
+<title>Mis XV Años - María</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -13,14 +13,14 @@
 <style>
 
 :root{
---color1:#d4af37;   /* dorado principal */
---color2:#8c6a1c;   /* dorado oscuro */
---color3:#f5e6a3;   /* dorado claro / brillo */
+--color1:#800040;   /* guinda principal */
+--color2:#4a001f;   /* guinda oscuro */
+--color3:#c94f8a;   /* guinda claro / brillo */
 
-/* versiones rgba del color */
---color1-rgba:212,175,55;
---color2-rgba:140,106,28;
---color3-rgba:245,230,163;
+/* versiones rgba */
+--color1-rgba:128,0,64;
+--color2-rgba:74,0,31;
+--color3-rgba:201,79,138;
 }
 *{margin:0; padding:0; box-sizing:border-box;}
 body{
@@ -29,7 +29,7 @@ body{
   text-align:center;
   background:
   linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
-  url("https://i.postimg.cc/3wsF6214/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-210306-0000.png");
+  url("https://i.postimg.cc/1zdXcFD5/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260315-211917-0000.png");
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
@@ -290,6 +290,12 @@ animation:shine 5s linear infinite;
 100%{background-position:200%;}
 }
 
+.btn{
+background:linear-gradient(45deg,var(--color2),var(--color1));
+border:none;
+box-shadow:0 10px 30px rgba(var(--color1-rgba),.5);
+}
+
 .slider{
 display:flex;
 overflow-x:auto;
@@ -360,33 +366,27 @@ flex-direction:column;
 align-items:center;
 }
 
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+.flip{
+background:linear-gradient(45deg,var(--color2),var(--color1));
+width:70px;
+height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+font-weight:bold;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(var(--color1-rgba),.5);
+animation:flipAnim .7s;
+}
+.flip-box p{
+margin-top:8px;
+font-size:14px;
 }
 
-.flip-box {
-  background: rgba(0,0,0,0.3); /* fondo semi-transparente */
-  border-radius: 12px;
-  padding: 20px;
-  min-width: 100px;
-  text-align: center;
-}
-
-.flip-box span {
-  font-size: 60px;  /* número grande */
-  font-weight: bold;
-  color: #ffd700;   /* dorado */
-  display: block;
-}
-
-.flip-box p {
-  font-size: 18px;  /* etiquetas: Días, Horas, Min, Seg */
-  color: white;
-  margin-top: 5px;
+@keyframes flipAnim{
+0%{transform:rotateX(90deg);opacity:0;}
+100%{transform:rotateX(0deg);opacity:1;}
 }
 
 #confirmacionForm{
@@ -452,10 +452,14 @@ h1 {
 }
 
 /* Subtítulos */
-h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 26px;
-  margin-bottom: 15px;
+h2{
+font-family:'Cinzel', serif;
+font-size:26px;
+margin-bottom:15px;
+color:#d4af37;
+text-shadow:
+0 0 5px rgba(212,175,55,.6),
+0 0 10px rgba(212,175,55,.4);
 }
 
 /* Párrafos y texto normal */
@@ -479,9 +483,11 @@ p, .flip-box p, #resultado, #confirmacionForm input, #confirmacionForm textarea 
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
   line-height: 1.6;
-  color: var(--color3);
+  color:#ffffff;
+text-shadow:0 0 6px rgba(0,0,0,.6);
 }
-.foto-magica {
+
+.foto-magica{
 position:relative;
 display:inline-block;
 width:100%;
@@ -582,20 +588,33 @@ box-shadow:
 }
 }
 
+.texto-dorado{
+  color:#00FF00; /* verde */
+  text-shadow:0 0 5px rgba(0,255,0,.6), 0 0 10px rgba(0,255,0,.4);
+  font-weight:bold;
+}
 
+#passFotos:focus {
+  outline:none;
+  border-color: var(--color3);
+  box-shadow:0 0 15px rgba(var(--color3-rgba),0.8);
+}
 </style>
 </head>
 <body>
 <div id="intro">
-  <div class="intro-content">
-    <h1>Fabiola</h1>
-    <p>Mis XV Años</p>
-    <button onclick="abrirInvitacion()">Abrir Invitación</button>
-  </div>
+<div class="intro-content">
+  <img src="https://i.postimg.cc/VvK8DswN/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-191620-0000.png" 
+       alt="Nombre" 
+       style="width:400px; max-width:90%; display:block; margin:0 auto;">
+  <p>Mis XV Años</p>
+  <p id="nombre-invitado" style="font-size:28px; color:#FFD700; margin-top:15px;"></p> <!-- Aquí aparece el nombre del invitado -->
+  <button onclick="abrirInvitacion()">Abrir Invitación</button>
+</div>
 </div>
 
 <audio id="musica" loop>
-  <source src="musica.mp3" type="audio/mpeg">
+  <source src="audio/musica.mp3" type="audio/mpeg">
 </audio>
 <button class="music-btn" onclick="toggleMusic()">🎵</button>
 
@@ -603,12 +622,12 @@ box-shadow:
 
   <!-- PORTADA -->
 <div class="section">
-  <h1>Fabiola</h1>
+  <img src="https://i.postimg.cc/4NGGbtQx/20260316-185102-0000.png" alt="Nombre" style="width:400px; max-width:90%; display:block; margin:0 auto;">
   <p>Mis XV Años</p>
   <p>15 de Agosto 2026</p>
 
   <div class="foto-magica">
-    <img src="https://i.postimg.cc/BQjt8Rsh/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-210824-0000.png">
+    <img src="https://i.postimg.cc/Px3Q21BN/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-170240-0000.png">
     <canvas id="polvo"></canvas>
   </div>
 
@@ -667,10 +686,10 @@ box-shadow:
 <div class="section">
 <h2>Ceremonia Religiosa</h2>
 
-<p>Parroquia San Miguel</p>
+<p>Parroquia Nuestra Señora de la Paz</p>
 <p>4:00 PM</p>
 
-<img src="https://i.postimg.cc/Y9rkgDGV/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-222847-0000.png">
+<img src="https://i.postimg.cc/rFHMTZtg/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260317-121122-0000.png">
 
 <a class="btn" href="https://maps.google.com" target="_blank">
 Ver ubicación
@@ -681,9 +700,9 @@ Ver ubicación
   <!-- RECEPCION -->
   <div class="section">
     <h2>Recepción</h2>
-    <p>Salón Jardín Real</p>
+<p>Salón Versalles</p>
     <p>7:00 PM</p>
-    <img src="https://i.postimg.cc/y6rBgP1H/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-222956-0000.png">
+    <img src="https://i.postimg.cc/652FrWyY/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260317-121305-0000.png">
     <a class="btn" href="https://maps.google.com" target="_blank">Cómo llegar</a>
   </div>
 
@@ -729,9 +748,9 @@ Evitar jeans y tenis
 <h2>Galería</h2>
 
 <div class="slider">
-<img src="https://i.postimg.cc/c1DLS362/56668-2.jpg">
-<img src="https://i.postimg.cc/6QwXR6yH/1773726183188-2.jpg">
-<img src="https://i.postimg.cc/VsTPgWJ5/1773725975209-2.jpg">
+<img src="https://i.postimg.cc/jS0Qgxk5/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-171349-0000.png">
+<img src="https://i.postimg.cc/DzfC6f8p/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-171311-0000.png">
+<img src="https://i.postimg.cc/RVcXzJt8/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-171421-0000.png">
 </div>
 
 </div>
@@ -769,7 +788,7 @@ Evitar jeans y tenis
 </div>
 
  <div class="section" id="trivia">
-  <h2>Trivia sobre Fabiola 🎉</h2>
+  <h2>Trivia sobre María 🎉</h2>
   <div id="pregunta"></div>
   <div id="opciones"></div>
   <button id="siguiente" class="btn" style="display:none;">
@@ -784,28 +803,89 @@ Siguiente <i class="fa-solid fa-arrow-right"></i>
 <h2>¡Nos vemos en la celebración!</h2>
 </div>
 
+<!-- 📸 MUEVE ESTO AQUÍ -->
+<div class="section">
+  <h2>📸 Comparte tus fotos</h2>
+  <p>Escanea el QR para subir tus fotos del evento</p>
+
+  <img id="qrUpload" style="width:180px;height:180px;">
+
+  <hr style="margin:20px 0;">
+
+  <h2>🔒 Fotos privadas</h2>
+<p style="color:#FF0000; text-shadow:none;">Ingresa contraseña</p>
+
+  <button class="btn" onclick="abrirFotos()">Ver fotos</button>
 </div>
 
+</div> <!-- container -->
 
+<!-- POPUP -->
+<div id="popupFotos" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:9999;">
+<div style="
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(128,0,64,0.3);
+padding:25px 30px; 
+border-radius:15px; 
+text-align:center; 
+color:white; 
+max-width:350px; 
+width:90%;
+box-shadow:0 8px 30px rgba(0,0,0,0.5);
+">
+    
+    <!-- Texto de la card -->
+    <p style="color:#800040; font-weight:bold; font-size:18px; margin-bottom:15px;">Ingresa contraseña</p>
+    
+  <input type="password" id="passFotos" style="
+padding:12px; 
+width:80%; 
+border-radius:8px; 
+border:2px solid var(--color1); 
+margin-bottom:15px; 
+font-size:16px;
+background: rgba(255,255,255,0.08);
+color:white;
+box-shadow:0 0 8px rgba(128,0,64,0.6);
+transition: all .3s;
+">
+
+    <br>
+   <button style="
+padding:10px 25px; 
+margin-right:10px; 
+background: linear-gradient(45deg,var(--color2),var(--color1));
+color:white; 
+border:none; 
+border-radius:10px; 
+cursor:pointer; 
+box-shadow:0 0 15px rgba(var(--color1-rgba),0.6);
+transition:.3s;
+" 
+onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 25px rgba(128,0,64,1)';" 
+onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 15px rgba(var(--color1-rgba),0.6)';"
+onclick="verificarFotos()">
+Entrar
+</button>
+    <button style="padding:10px 25px; background:#ccc; color:black; border:none; border-radius:10px; cursor:pointer;" onclick="cerrarFotos()">Cancelar</button>
+
+    <p id="errorFotos" style="color:red; display:none; margin-top:10px;">Incorrecta</p>
+  </div>
+</div>
 
 <script>
-function toggleMusic(){
+function toggleMusic() {
+  const music = document.getElementById("musica");
+  const btn = document.querySelector(".music-btn");
 
-let music = document.getElementById("musica");
-let btn = document.querySelector(".music-btn");
-
-if(music.paused){
-
-music.play().catch(()=>{});
-btn.style.animation = "girar 4s linear infinite, pulsoMusica 2s infinite";
-
-}else{
-
-music.pause();
-btn.style.animation = "none";
-
-}
-
+  if (music.paused) {
+    music.play().catch(()=>{});
+    btn.style.animation = "girar 4s linear infinite, pulsoMusica 2s infinite";
+  } else {
+    music.pause();
+    btn.style.animation = "none";
+  }
 }
 // contador
 const fechaEvento = new Date("2026-08-15T16:00:00").getTime();
@@ -828,12 +908,15 @@ actualizarFlip("segundos",segundos);
 
 },1000);
 
-function actualizarFlip(id, valor){
-  const el = document.getElementById(id);
-  if(el.innerText != valor){
-    el.innerText = valor;
-    // eliminado el latido
-  }
+function actualizarFlip(id,valor){
+const el=document.getElementById(id);
+
+if(el.innerText!=valor){
+el.style.animation="none";
+void el.offsetWidth;
+el.style.animation="flipAnim .7s";
+el.innerText=valor;
+}
 }
 
 // secciones y timeline animado
@@ -906,27 +989,27 @@ this.reset();
 
 const preguntas = [
   {
-    pregunta: "¿Cuál es el color favorito de Fabiola?",
+    pregunta: "¿Cuál es el color favorito de María?",
     opciones: ["Azul", "Rosa", "Plata", "Morado"],
     correcta: 2
   },
   {
-    pregunta: "¿Quién es el artista favorito de Fabiola?",
+    pregunta: "¿Quién es el artista favorito de María?",
     opciones: ["Bad Bunny", "Taylor Swift", "Shakira", "Ed Sheeran"],
     correcta: 1
   },
   {
-    pregunta: "¿Cuál es la serie favorita de Fabiola?",
+    pregunta: "¿Cuál es la serie favorita de María?",
     opciones: ["Stranger Things", "The Witcher", "Friends", "Gossip Girl"],
     correcta: 3
   },
   {
-    pregunta: "¿Cuál es el deporte que más le gusta a Fabiola?",
+    pregunta: "¿Cuál es el deporte que más le gusta a María?",
     opciones: ["Fútbol", "Natación", "Tenis", "Básquetbol"],
     correcta: 1
   },
   {
-    pregunta: "¿Cuál es la comida favorita de Fabiola?",
+    pregunta: "¿Cuál es la comida favorita de María?",
     opciones: ["Pizza", "Sushi", "Tacos", "Pasta"],
     correcta: 3
   }
@@ -985,30 +1068,22 @@ document.getElementById("siguiente").addEventListener("click", () => {
 mostrarPregunta();
 
 
-function abrirInvitacion(){
-  document.getElementById("intro").style.display="none";
-  document.querySelector(".music-btn").style.display="block";
+function abrirInvitacion() {
+  document.getElementById("intro").style.display = "none";
+  document.querySelector(".music-btn").style.display = "block";
 
-  let music = document.getElementById("musica");
-  music.play().catch(()=>{
-    console.log("El navegador requiere interacción del usuario para reproducir audio.");
+  const music = document.getElementById("musica");
+
+  // Intentamos reproducir la música
+  music.play().catch(err => {
+    console.log("Autoplay bloqueado:", err);
   });
+
+  // Animación del botón de música
+  document.querySelector(".music-btn").style.animation = "girar 4s linear infinite, pulsoMusica 2s infinite";
 }
 
-const params = new URLSearchParams(window.location.search);
-const invitado = params.get("invitado");
 
-if(invitado){
-  // Cambiar agradecimiento final
-  document.getElementById("agradecimiento").innerHTML =
-    "Tu presencia hará este día aún más especial <b>"+invitado+"</b>";
-  
-  // Cambiar nombre en el intro
-  document.querySelector("#intro h1").innerText = "Invitación para " + invitado;
-  
-  // NO cambiar el nombre de la XVañera en la portada, dejar "María"
-  // document.querySelectorAll(".section h1")[0].innerText = invitado; // <-- eliminar esta línea
-}
 
 const canvas = document.getElementById("polvo");
 const ctx = canvas.getContext("2d");
@@ -1055,6 +1130,63 @@ requestAnimationFrame(animarPolvo);
 }
 
 animarPolvo();
+
+const params = new URLSearchParams(window.location.search);
+const invitado = params.get("invitado");
+
+if (invitado) {
+  // Intro
+  document.getElementById("nombre-invitado").innerHTML =
+    "¡Bienvenido, <b>" + invitado + "</b>!";
+
+  // Agradecimiento al final
+  document.getElementById("agradecimiento").innerHTML =
+    "Tu presencia hará este día aún más especial <b>" + invitado + "</b>";
+}
+
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+<script>
+// 🔗 LINK SUBIDA (Dropbox)
+const linkSubida = "https://www.dropbox.com/request/IJF8H3t10XeBY80guJU3";
+
+// 🔗 LINK FOTOS
+const linkFotos = "https://www.dropbox.com/scl/fo/s8xy77ba3lwlq6b5atdkd/AOELaoD-kWLeQcx0IzXQG_w?rlkey=bg2gubkzd3igu2ji3j5d8lqrw&st=reg1h3g9&dl=0";
+
+// 🔐 CONTRASEÑA
+const passwordFotos = "maria2026";
+
+// GENERAR QR
+new QRious({
+  element: document.getElementById("qrUpload"),
+  value: linkSubida,
+  size: 180
+});
+
+// POPUP
+function abrirFotos(){
+  document.getElementById("popupFotos").style.display="flex";
+  document.getElementById("errorFotos").style.display="none"; // reset
+  document.getElementById("passFotos").value = ""; // limpia input
+}
+
+function cerrarFotos(){
+  document.getElementById("popupFotos").style.display="none";
+}
+
+function verificarFotos(){
+  const pass = document.getElementById("passFotos").value;
+
+  if(pass === passwordFotos){
+    window.open(linkFotos, "_blank");
+    cerrarFotos();
+  }else{
+    document.getElementById("errorFotos").style.display="block";
+  }
+}
+</script>
+
 </body>
 </html>
