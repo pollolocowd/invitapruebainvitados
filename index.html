@@ -603,8 +603,8 @@ box-shadow:
 </div>
 </div>
 
-<audio id="musica" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2d6d5e7b3e.mp3">
+<audio id="musica" loop preload="auto">
+  <source src="musica.mp3" type="audio/mpeg">
 </audio>
 <button class="music-btn" onclick="toggleMusic()">🎵</button>
 
@@ -798,23 +798,17 @@ Siguiente <i class="fa-solid fa-arrow-right"></i>
 
 
 <script>
-function toggleMusic(){
+function toggleMusic() {
+  const music = document.getElementById("musica");
+  const btn = document.querySelector(".music-btn");
 
-let music = document.getElementById("musica");
-let btn = document.querySelector(".music-btn");
-
-if(music.paused){
-
-music.play().catch(()=>{});
-btn.style.animation = "girar 4s linear infinite, pulsoMusica 2s infinite";
-
-}else{
-
-music.pause();
-btn.style.animation = "none";
-
-}
-
+  if (music.paused) {
+    music.play().catch(()=>{});
+    btn.style.animation = "girar 4s linear infinite, pulsoMusica 2s infinite";
+  } else {
+    music.pause();
+    btn.style.animation = "none";
+  }
 }
 // contador
 const fechaEvento = new Date("2026-08-15T16:00:00").getTime();
@@ -997,12 +991,19 @@ document.getElementById("siguiente").addEventListener("click", () => {
 mostrarPregunta();
 
 
-function abrirInvitacion(){
-document.getElementById("intro").style.display="none";
-document.querySelector(".music-btn").style.display="block";
+function abrirInvitacion() {
+  document.getElementById("intro").style.display = "none";
+  document.querySelector(".music-btn").style.display = "block";
 
-let music=document.getElementById("musica");
-music.play().catch(()=>{});
+  const music = document.getElementById("musica");
+
+  // Intentamos reproducir la música
+  music.play().catch(err => {
+    console.log("Autoplay bloqueado:", err);
+  });
+
+  // Animación del botón de música
+  document.querySelector(".music-btn").style.animation = "girar 4s linear infinite, pulsoMusica 2s infinite";
 }
 
 
