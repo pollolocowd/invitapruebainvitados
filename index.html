@@ -1003,10 +1003,10 @@ if(invitado){
     "Tu presencia hará este día aún más especial <b>"+invitado+"</b>";
   
   // Cambiar nombre en el intro
-  document.querySelector("#intro h1").innerText = invitado;
+  document.querySelector("#intro h1").innerText = "Invitación para " + invitado;
   
-  // Cambiar nombre en la portada principal
-  document.querySelectorAll(".section h1")[0].innerText = invitado;
+  // NO cambiar el nombre de la XVañera en la portada, dejar "María"
+  // document.querySelectorAll(".section h1")[0].innerText = invitado; // <-- eliminar esta línea
 }
 
 const canvas = document.getElementById("polvo");
