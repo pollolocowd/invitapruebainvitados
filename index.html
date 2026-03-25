@@ -27,32 +27,35 @@ body{
   font-family:'Poppins',sans-serif;
   color:white;
   text-align:center;
-  background:
-  linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
-  url("https://i.postimg.cc/1zdXcFD5/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260315-211917-0000.png");
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
+  margin:0;
+  overflow-x:hidden;
 }
+
+  
 @keyframes lucesVerticales {0%{background-position:0 0;}100%{background-position:20px 0;}}
 
 .container{width:90%; max-width:650px; margin:auto; padding:40px 0;}
 .section{
   margin:60px 0;
   position:relative;
-overflow:hidden;
+  overflow:visible;
+
   padding:35px 30px;
-  background: rgba(255,255,255,0.05); /* mucho más transparente */
-  border: 1px solid rgba(255,255,255,0.2); /* borde más delicado */
-  border-radius: 25px; /* esquinas un poco más redondeadas */
-  backdrop-filter: blur(10px); /* más desenfoque para efecto vidrio */
+
+  background: rgba(0,0,0,0.55); /* 🔥 base estable */
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 25px;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); /* 🔥 para iPhone */
+
   box-shadow:
-0 8px 30px rgba(0,0,0,0.5),
-0 0 25px rgba(var(--color1-rgba),.2); /* sombra más suave y difusa */
+    0 8px 30px rgba(0,0,0,0.5),
+    0 0 25px rgba(var(--color1-rgba),.2);
+
   opacity:0;
   transform:translateY(40px);
   transition: all .6s ease-out;
-  background-image: linear-gradient(135deg, rgba(var(--color1-rgba),0.08), rgba(0,0,0,0.05));
 }
 .section::after {
   content:"";
@@ -97,7 +100,7 @@ font-size:16px;
 font-weight:500;
 border:1px solid var(--color1);
 box-shadow:0 8px 20px rgba(var(--color2-rgba),0.4);
-backdrop-filter: blur(10px);
+backdrop-filter: blur(6px);
 transition:.3s;
 }
 
@@ -660,9 +663,60 @@ box-shadow:
   color: var(--color3);
 }
 
+
+
+html, body{
+  height:100%;
+}
+
+
+body{
+  -webkit-overflow-scrolling: touch;
+}
+
+/* FIX ESPECIAL PARA iPHONE */
+@supports (-webkit-touch-callout: none) {
+
+  .section{
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    background: rgba(0,0,0,0.5); /* fallback elegante */
+  }
+
+}
+
+
+.bg-fondo{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.65)),
+    url("https://i.postimg.cc/1zdXcFD5/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260315-211917-0000.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 0; /* 🔥 CAMBIO CLAVE */
+}
+
+html, body{
+  height: 100%;
+}
+
+.container{
+  position: relative;
+  z-index: 1;
+}
 </style>
 </head>
 <body>
+<div class="bg-fondo"></div>
 <div id="intro">
 <div class="intro-content">
   <img src="https://i.postimg.cc/VvK8DswN/Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Copia-de-Cop-20260316-191620-0000.png" 
@@ -675,7 +729,7 @@ box-shadow:
 </div>
 
 <audio id="musica" loop>
-  <source src="musica.mp3" type="audio/mpeg">
+<source src="musica/musica.mp3" type="audio/mpeg">
   Tu navegador no soporta el elemento de audio.
 </audio>
 
